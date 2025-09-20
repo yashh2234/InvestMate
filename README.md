@@ -198,5 +198,6 @@ npm run test
 ## Submission
 
 * GitHub repo: [https://github.com/yashh2234/gripinvest\_winter\_internship\_backend](https://github.com/yashh2234/gripinvest_winter_internship_backend)
-* Postman collection: `gripinvest_postman_collection.json`
+* Postman collection: `GripInvest_Collection.json`
+* Postman environment: `GripInvest_Environment.json`
 * SQL seed file: `backend/db/init.sql`
