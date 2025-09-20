@@ -125,7 +125,7 @@ VITE_API_BASE_URL=http://localhost:5000
 * Run frontend:
 
 ```bash
-npm run dev -- --host 0.0.0.0
+npm run dev
 ```
 
 ### 4. Docker Setup
