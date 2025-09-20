@@ -37,10 +37,13 @@ The project integrates AI to provide:
 │   ├── routes/
 │   ├── middleware/
 │   ├── db/
+│   ├── .env               # Local development environment variables (do NOT push)
+│   ├── .env.docker        # Docker environment variables (do NOT push)
 │   └── ...
 ├── frontend/               # React/Next.js frontend
 │   ├── components/
 │   ├── pages/
+│   ├── .env               # Frontend environment variables (do NOT push)
 │   └── ...
 ├── docker-compose.yml      # Local container orchestration
 ├── gripinvest_postman_collection.json
@@ -68,7 +71,7 @@ cd backend
 npm install
 ```
 
-* Create `.env` with your credentials (do **not** push this file to GitHub):
+* Create `.env` with your local credentials (do **not** push this file to GitHub):
 
 ```
 PORT=5000
@@ -78,6 +81,24 @@ DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=root
 DB_NAME=investment_db
+GEMINI_API_KEY=your-gemini-api-key
+GMAIL_USER=your-email
+GMAIL_APP_PASS=your-app-password
+```
+
+* For Docker, use `.env.docker` (service name `mysql` instead of `localhost` for DB):
+
+```
+PORT=5000
+JWT_SECRET=your-secret-key
+DB_HOST=mysql
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=investment_db
+GEMINI_API_KEY=your-gemini-api-key
+GMAIL_USER=your-email
+GMAIL_APP_PASS=your-app-password
 ```
 
 * Run backend (locally or via Docker):
@@ -95,7 +116,7 @@ cd frontend
 npm install
 ```
 
-* Update `.env` if needed:
+* Update `.env`:
 
 ```
 VITE_API_BASE_URL=http://localhost:5000
@@ -107,7 +128,7 @@ VITE_API_BASE_URL=http://localhost:5000
 npm run dev -- --host 0.0.0.0
 ```
 
-### 4. Docker Setup (Optional)
+### 4. Docker Setup
 
 Run all services (backend + frontend + MySQL) using Docker:
 
