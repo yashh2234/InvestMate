@@ -46,7 +46,7 @@ The project integrates AI to provide:
 │   ├── .env               # Frontend environment variables (do NOT push)
 │   └── ...
 ├── docker-compose.yml      # Local container orchestration
-├── gripinvest_postman_collection.json
+├── InvestMate_collection.json
 ├── README.md
 └── .gitignore
 ```
