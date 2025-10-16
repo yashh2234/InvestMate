@@ -1,0 +1,151 @@
+{
+  "info": {
+    "name": "GripInvest Mini Investment Platform",
+    "_postman_id": "gripinvest-collection-2025",
+    "description": "Postman collection for all backend APIs for GripInvest Winter Internship 2025 Mini Investment Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Signup",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"StrongPassword123\",\n  \"risk_appetite\": \"moderate\"\n}"
+            },
+            "url": { "raw": "{{BASE_URL}}/auth/signup", "host": ["{{BASE_URL}}"], "path": ["auth","signup"] }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"StrongPassword123\"\n}"
+            },
+            "url": { "raw": "{{BASE_URL}}/auth/login", "host": ["{{BASE_URL}}"], "path": ["auth","login"] }
+          }
+        },
+        {
+          "name": "Password Reset",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{ \"email\": \"john@example.com\" }" },
+            "url": { "raw": "{{BASE_URL}}/auth/reset-password", "host": ["{{BASE_URL}}"], "path": ["auth","reset-password"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get Products",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{JWT_TOKEN}}" }],
+            "url": { "raw": "{{BASE_URL}}/products", "host": ["{{BASE_URL}}"], "path": ["products"] }
+          }
+        },
+        {
+          "name": "Create Product (Admin Only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{JWT_TOKEN}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"High Yield Bond\",\n  \"investment_type\": \"bond\",\n  \"tenure_months\": 12,\n  \"annual_yield\": 6.5,\n  \"risk_level\": \"moderate\",\n  \"min_investment\": 1000,\n  \"max_investment\": 50000,\n  \"description\": \"Auto-generated product description.\"\n}"
+            },
+            "url": { "raw": "{{BASE_URL}}/products", "host": ["{{BASE_URL}}"], "path": ["products"] }
+          }
+        },
+        {
+          "name": "Update Product (Admin Only)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{JWT_TOKEN}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": { "mode": "raw", "raw": "{ \"annual_yield\": 7.0 }" },
+            "url": { "raw": "{{BASE_URL}}/products/:id", "host": ["{{BASE_URL}}"], "path": ["products",":id"] }
+          }
+        },
+        {
+          "name": "Delete Product (Admin Only)",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{JWT_TOKEN}}" }],
+            "url": { "raw": "{{BASE_URL}}/products/:id", "host": ["{{BASE_URL}}"], "path": ["products",":id"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Investments",
+      "item": [
+        {
+          "name": "Invest in Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{JWT_TOKEN}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": { "mode": "raw", "raw": "{ \"product_id\": \"product-uuid\", \"amount\": 5000 }" },
+            "url": { "raw": "{{BASE_URL}}/investments", "host": ["{{BASE_URL}}"], "path": ["investments"] }
+          }
+        },
+        {
+          "name": "Get User Portfolio",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{JWT_TOKEN}}" }],
+            "url": { "raw": "{{BASE_URL}}/investments", "host": ["{{BASE_URL}}"], "path": ["investments"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Transaction Logs",
+      "item": [
+        {
+          "name": "Get Logs by User",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{JWT_TOKEN}}" }],
+            "url": { "raw": "{{BASE_URL}}/transactions?user_id={{USER_ID}}", "host": ["{{BASE_URL}}"], "path": ["transactions"], "query": [{ "key": "user_id", "value": "{{USER_ID}}" }] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{BASE_URL}}/health", "host": ["{{BASE_URL}}"], "path": ["health"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "BASE_URL", "value": "http://localhost:5000" },
+    { "key": "JWT_TOKEN", "value": "" },
+    { "key": "USER_ID", "value": "" }
+  ]
+}
