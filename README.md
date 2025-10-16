@@ -198,5 +198,4 @@ npm run test
 ## Submission
 
 * Postman collection: `InvestMate_Collection.json`
-* Postman environment: `InvestMate_Environment.json`
 * SQL seed file: `backend/db/init.sql`
