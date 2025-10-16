@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack Mini Investment Platform built as part of the Grip Invest Winter Internship 2025.
+This is a full-stack Mini Investment Platform.
 The platform allows users to:
 
 * Sign up / log in with JWT-based authentication
