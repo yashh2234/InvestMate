@@ -1,4 +1,4 @@
-# Mini Investment Platform - Grip Invest Winter Internship 2025
+# InvestMate - Mini Investment Platform
 
 ## Overview
 
@@ -58,8 +58,8 @@ The project integrates AI to provide:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yashh2234/gripinvest_winter_internship_backend.git
-cd gripinvest_winter_internship_backend
+git clone https://github.com/yashh2234/InvestMate.git
+cd InvestMate
 ```
 
 ### 2. Backend Setup
@@ -197,7 +197,6 @@ npm run test
 
 ## Submission
 
-* GitHub repo: [https://github.com/yashh2234/gripinvest\_winter\_internship\_backend](https://github.com/yashh2234/gripinvest_winter_internship_backend)
-* Postman collection: `GripInvest_Collection.json`
-* Postman environment: `GripInvest_Environment.json`
+* Postman collection: `InvestMate_Collection.json`
+* Postman environment: `InvestMate_Environment.json`
 * SQL seed file: `backend/db/init.sql`
