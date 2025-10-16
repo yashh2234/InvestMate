@@ -153,7 +153,7 @@ Seed data is included in `backend/db/init.sql`.
 
 ## API Documentation
 
-All APIs are included in the Postman collection: `gripinvest_postman_collection.json`.
+All APIs are included in the Postman collection: `InvestMate_collection.json`.
 Key APIs:
 
 * `POST /auth/signup` – user signup
