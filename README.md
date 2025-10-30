@@ -23,10 +23,10 @@ The project integrates AI to provide:
 
 ## Tech Stack
 
-**Backend:** Node.js, Express, MySQL, JWT authentication, AI integrations
-**Frontend:** React.js/Next.js, TailwindCSS, Material UI, Recharts/Chart.js
-**DevOps:** Docker, docker-compose, health checks
-**Testing:** Jest (unit tests for backend and frontend with ≥75% coverage)
+** Backend: Node.js, Express, MySQL, JWT authentication, AI integrations
+** Frontend: React.js/Next.js, TailwindCSS, Material UI, Recharts/Chart.js
+** DevOps: Docker, docker-compose, health checks
+** Testing: Jest (unit tests for backend and frontend with ≥75% coverage)
 
 ---
 
