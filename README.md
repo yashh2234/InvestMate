@@ -71,7 +71,7 @@ cd backend
 npm install
 ```
 
-* Create `.env` with your local credentials (do **not** push this file to GitHub):
+* Create `.env` with your local credentials:
 
 ```
 PORT=5000
